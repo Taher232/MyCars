@@ -4,7 +4,10 @@ const port = process.env.PORT || 5000;
 const dbConnection = require("./db");
 const ObjectId = require("mongodb").ObjectId;
 const Car = require("./models/carModel");
+var cors = require('cors');
 
+
+app.use(cors())
 app.use(express.json({ extend: true }));
 
 app.get("/", (req, res) => {
